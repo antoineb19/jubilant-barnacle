@@ -8,13 +8,17 @@ const PORT=80;
 
 //We need a function which handles requests and send response
 function handleRequest(request, response){
-    console.log("Requête reçue pour l'URL ", request.url);
+    console.log("Requête reçue pour l'URL ", request.url, " : ", request.method);
     if(request.url == "/"){
 	    file(response, "index.html");
     } else if(request.url == "/favicon.ico"){
     	file(response, "favicon.ico");
     } else if(request.url == "/indexScript.js"){
     	file(response, "indexScript.js");
+    } else if(request.url == "/xhr.js"){
+    	file(response, "xhr.js");
+    } else {
+    	console.log("URL inconnue : ", request.url);
     }
 }
 
