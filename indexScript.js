@@ -1,4 +1,4 @@
 console.log("Bonjour !");
 
 var bouton = document.getElementById("bouton");
-bouton.value("Clique donc !");
+bouton.value = "Clique donc !";
