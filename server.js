@@ -6,9 +6,10 @@ const PORT=80;
 
 //We need a function which handles requests and send response
 function handleRequest(request, response){
-    response.writeHead(200);
-    response.end('Salut tout le monde !');
     console.log('Requête reçue !');
+    response.writeHead(200);
+    response.write("Hello world !");
+    response.end();
 }
 
 //Create a server
