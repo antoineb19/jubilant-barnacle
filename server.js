@@ -10,20 +10,22 @@ const PORT=80;
 function handleRequest(request, response){
     console.log("Requête reçue pour l'URL ", request.url);
     if(request.url == "/"){
-	    response.writeHead(200);
-	    response.write("Hello world !");
-	    response.end();
+	    file(response, "index.html");
     } else if(request.url == "/favicon.ico"){
-    	fs.readFile('favicon.ico', function(error, file) {
-    		if(error){
-    			throw error;
-    		} else {
-        		response.writeHead(200);
-        		response.write(file);
-        		response.end();
-    		}
-    	});
+    	file(response, "favicon.ico");
     }
+}
+
+function file(response, fileName){
+	fs.readFile(fileName, function(error, file) {
+		if(error){
+			throw error;
+		} else {
+    		response.writeHead(200);
+    		response.write(file);
+    		response.end();
+		}
+	});
 }
 
 //Create a server
