@@ -1,5 +1,7 @@
 git add --all
 comment=`curl -s 'http://whatthecommit.com/' | grep '<p>' | cut -c4-`
-echo $comment
-git commit -m '$comment'
+guillemet="'"
+c=$guillemet$comment$guillemet
+echo $c
+git commit -m $c
 git push
