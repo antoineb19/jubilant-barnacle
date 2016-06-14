@@ -3,5 +3,5 @@ comment=`curl -s 'http://whatthecommit.com/' | grep '<p>' | cut -c4-`
 guillemet="'"
 c=$guillemet$comment$guillemet
 
-echo $(git commit -m $c)
+git commit -m $c
 git push
