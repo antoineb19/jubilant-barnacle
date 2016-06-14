@@ -19,7 +19,7 @@ function handleRequest(request, response){
     	file(response, "xhr.js");
     } else if(request.url == "/test"){
     	request.on('data', function (chunk) {
-        	console.log('GOT DATA : ', chunk);
+        	console.log('GOT DATA : ', chunk.toString('utf8'));
     	});
     	message(response, "Bien reçu !");
     }  else {
