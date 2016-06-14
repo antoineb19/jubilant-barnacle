@@ -6,7 +6,7 @@ const PORT=80;
 
 //We need a function which handles requests and send response
 function handleRequest(request, response){
-    console.log('Requête reçue !');
+    console.log("Requête reçue pour l'URL ", request.url);
     response.writeHead(200);
     response.write("Hello world !");
     response.end();
