@@ -24,7 +24,8 @@ function handleRequest(request, response){
     	message(response, "Bien reçu !");
     } else if(request.url == "/get"){
     	console.log("Reçu un get");
-    	message(response, "ça vient du serveur");
+    	var text = encodeURIComponent("ça vient du serveur !");
+    	message(response, text);
     } else {
     	console.log("URL inconnue : ", request.url);
     }
