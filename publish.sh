@@ -4,4 +4,8 @@ guillemet="'"
 c=$guillemet$comment$guillemet
 
 git commit
+i
+c
+^C
+:wq
 git push
