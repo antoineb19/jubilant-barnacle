@@ -8,6 +8,7 @@ var xhr = getXMLHttpRequest();
 xhr.onreadystatechange = function() {
 	if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
 		console.log("OK"); // C'est bon \o/
+		console.log(xhr.responseText);
 	}
 };
 

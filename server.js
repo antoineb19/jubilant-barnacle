@@ -17,7 +17,10 @@ function handleRequest(request, response){
     	file(response, "indexScript.js");
     } else if(request.url == "/xhr.js"){
     	file(response, "xhr.js");
-    } else {
+    } else if(request.url == "/test"){
+    	console.log(request);
+    	message(response, "Bien reçu !");
+    }  else {
     	console.log("URL inconnue : ", request.url);
     }
 }
@@ -32,6 +35,12 @@ function file(response, fileName){
     		response.end();
 		}
 	});
+}
+
+function message(response, text){
+	response.writeHead(200);
+	response.write(text);
+	response.end();
 }
 
 //Create a server
