@@ -5,7 +5,7 @@ bouton.innerHTML = "Envoyer !";
 
 var textField = document.getElementById("textField");
 
-bouton.onClick = function(){
+bouton.onclick = function(){
 	var xhr = getXMLHttpRequest();
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
