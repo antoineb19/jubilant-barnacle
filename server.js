@@ -1,5 +1,7 @@
 //Lets require/import the HTTP module
 var http = require('http');
+var fs = require('fs');
+
 
 //Lets define a port we want to listen to
 const PORT=80;
@@ -7,9 +9,21 @@ const PORT=80;
 //We need a function which handles requests and send response
 function handleRequest(request, response){
     console.log("Requête reçue pour l'URL ", request.url);
-    response.writeHead(200);
-    response.write("Hello world !");
-    response.end();
+    if(request.url == "/"){
+	    response.writeHead(200);
+	    response.write("Hello world !");
+	    response.end();
+    } else if(request.url == "/favicon.ico"){
+    	fs.readFile('favicon.ico', function(error, file) {
+    		if(error){
+    			throw error;
+    		} else {
+        		response.writeHead(200);
+        		response.write(file);
+        		response.end();
+    		}
+    	});
+    }
 }
 
 //Create a server
