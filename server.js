@@ -22,7 +22,10 @@ function handleRequest(request, response){
         	console.log('GOT DATA : ', chunk.toString('utf8'));
     	});
     	message(response, "Bien reçu !");
-    }  else {
+    } else if(request.url == "/get"){
+    	console.log("Reçu un get");
+    	message(response, "ça vient du serveur");
+    } else {
     	console.log("URL inconnue : ", request.url);
     }
 }
