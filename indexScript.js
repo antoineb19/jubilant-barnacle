@@ -26,7 +26,8 @@ getButton.onclick = function(){
 	xhr.onreadystatechange = function() {
 		if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
 			console.log("OK"); // C'est bon \o/
-			document.getElementById("resultField").innerHTML = xhr.responseText;
+			var text = decodeURIComponent(xhr.responseText);
+			document.getElementById("resultField").innerHTML = text;
 		}
 	};
 
