@@ -13,6 +13,8 @@ function handleRequest(request, response){
 	    file(response, "index.html");
     } else if(request.url == "/favicon.ico"){
     	file(response, "favicon.ico");
+    } else if(request.url == "/indexScript.js"){
+    	file(response, "indexScript.js");
     }
 }
 
