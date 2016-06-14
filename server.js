@@ -18,7 +18,9 @@ function handleRequest(request, response){
     } else if(request.url == "/xhr.js"){
     	file(response, "xhr.js");
     } else if(request.url == "/test"){
-    	console.log(request);
+    	request.on('data', function (chunk) {
+        	console.log('GOT DATA : ', chunk);
+    	});
     	message(response, "Bien reçu !");
     }  else {
     	console.log("URL inconnue : ", request.url);
